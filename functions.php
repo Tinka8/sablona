@@ -86,9 +86,27 @@ function getMenuData(string $type): array{
     }
     return $menu;
 }
-function printMenu(array $menu){
+
+/**
+ * Vypíše menu na základe zadaných dát
+ *
+ * @param array $menu Dáta menu
+ * @param string $theme Téma
+ * @param string $defaultTheme Predvolená téma
+ * @return void Funkcia nevracia žiadnu hodnotu
+ */
+function printMenu(array $menu, string $theme = "light", string $defaultTheme = "light"): void {
     foreach ($menu as $menuName => $menuData) {
-        echo '<li><a href="'.$menuData['path'].'">'.$menuData['name'].'</a></li>';
+        // Get URI from menu data
+        $uri = $menuData['path'];
+
+        // If theme is not default, add it to the URI
+        if ($theme !== $defaultTheme) {
+            $uri .= "?theme=$theme";
+        }
+
+        // Print menu item
+        echo '<li><a href="'.$uri.'">'.$menuData['name'].'</a></li>';
     }
 }
 
@@ -110,7 +128,6 @@ function getCSS()
     $jsonStr = file_get_contents("data/datas.json");
     $data = json_decode($jsonStr, true);
     $stranka = basename($_SERVER['REQUEST_URI']);
-    echo $stranka;
     $stranka = explode(".", $stranka)[0];
     $suboryCSS = $data['stranky'][$stranka];
     foreach ($suboryCSS as $subor) {
@@ -173,3 +190,24 @@ function finishPortfolio3() {
     }
 }
 
+
+/**
+ * Vráti relatívnou URI aktuálnej stránky (bez query stringu)
+ *
+ * @return string Relatívna URI aktuálnej stránky
+ */
+function getCurrentPagePath(): string {
+    return explode("?", $_SERVER["REQUEST_URI"])[0];
+}
+
+/**
+ * Vráti odkaz na aktuálnu stránku s opačnou témou
+ *
+ * @param string $currentTheme Aktuálna téma
+ * @return string Odkaz na aktuálnu stránku s opačnou témou
+ */
+function getCurrentLinkOtherTheme(string $currentTheme): string {
+    $currentPath = getCurrentPagePath();
+    $currentTheme = $currentTheme === "light" ? "dark" : "light";
+    return "{$currentPath}?theme={$currentTheme}";
+}
