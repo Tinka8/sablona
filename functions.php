@@ -192,7 +192,7 @@ function finishPortfolio3() {
 
 
 /**
- * Vráti relatívnou URI aktuálnej stránky (bez query stringu)
+ * Vráti relatívnu URI aktuálnej stránky (bez query stringu)
  *
  * @return string Relatívna URI aktuálnej stránky
  */
