@@ -1,0 +1,55 @@
+/**
+ * Theme variables   
+ */
+.theme-light {
+	--background: #fff;
+	--background-secondary: #f7f7f7;
+	--text-normal: #333;
+}
+
+.theme-dark {
+	--background: #333;
+	--background-secondary: #444;
+	--text-normal: #fff;
+}
+
+/**
+ * Theme styles
+ */
+main section:nth-child(odd) {
+	background: var(--background);
+	color: var(--text-normal);
+}
+
+main section:nth-child(even) {
+	background: var(--background-secondary);
+	color: var(--text-normal);
+}
+
+.main-menu li a {
+	color: var(--text-normal);
+}
+
+.slides-container {
+	background-color: var(--background);
+}
+
+.accordion {
+	background-color: var(--background-secondary);
+}
+
+.question {
+	background-color: var(--background);
+	color: var(--text-normal);
+}
+
+.question:hover,
+.accordion.active .question {
+	background-color: var(--background-secondary);
+	color: var(--text-normal);
+}
+
+.accordion.active .answer {
+	background-color: var(--background);
+	color: var(--text-normal);
+}
