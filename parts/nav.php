@@ -8,7 +8,7 @@ $theme = $_GET["theme"] ?? "light";
 ?>
 <header style="background-color: <?php echo $theme === "dark" ? "grey" : "white"; ?>" class="container main-header">
     <div  class="logo-holder">
-        <a href="<?php echo $menu['home']['path']; ?>">
+        <a href="<?php echo $menu['home']['path']; ?>?theme=<?php echo $theme ; ?>">
             <img alt="img" src="<?php echo $theme === "dark" ? "img/logo_white.png" : "img/logo.png" ?>" height="40">
         </a>
     </div>
