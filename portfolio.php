@@ -1,3 +1,4 @@
+
 <?php
 include_once "parts/header.php";
 ?>
@@ -21,5 +22,3 @@ include_once "parts/nav.php";
 <?php
 include_once "parts/footer.php";
 ?>
-
-

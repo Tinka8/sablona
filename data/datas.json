@@ -19,31 +19,26 @@
   "stranky": {
     "index": [
       "css/style.css",
-      "css/slider.css",
-      "css/themes.css"
+      "css/slider.css"
     ],
     "portfolio": [
       "css/style.css",
       "css/banner.css",
-      "css/portfolio.css",
-      "css/themes.css"
+      "css/portfolio.css"
     ],
     "qna": [
       "css/style.css",
       "css/banner.css",
-      "css/accordion.css",
-      "css/themes.css"
+      "css/accordion.css"
     ],
     "kontakt": [
       "css/style.css",
       "css/banner.css",
-      "css/form.css",
-      "css/themes.css"
+      "css/form.css"
     ],
     "thankyou": [
       "css/style.css",
-      "css/banner.css",
-      "css/themes.css"
+      "css/banner.css"
     ]
   },
   "portfolio-text": {

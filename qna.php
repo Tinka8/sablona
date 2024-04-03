@@ -19,11 +19,23 @@ include_once "parts/nav.php";
       </div>
     </section>
           <?php
-           include_once "functions.php";
-          insertQnA();
+           include_once "classes/QnA.php";
+           use otazkyodpovede\QnA;
+
+          $qna = new QnA();
+          // $qna->insertQnA();
           ?>
-    </section>
-  </div>
+
+          <?php foreach($qna->getQnA() as $qna): ?>
+            <section class="container">
+              <div class="row">
+                <div class="col-100">
+                  <h4><?= $qna['otazka'] ?></h4>
+                  <p><?= $qna['odpoved'] ?></p>
+                </div>
+              </div>
+            </section>
+          <?php endforeach; ?>
   </main>
   <?php
 include_once "parts/footer.php"
